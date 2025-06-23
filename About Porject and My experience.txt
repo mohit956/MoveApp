@@ -1,0 +1,48 @@
+So first of all Kotlin was very new for me because I have done app development in Flutter so I have to learn Kotlin which was very fun So along with Kotlin I have learned the jetpack compose And came to know about this powerful tool 'Koin' Which was eventually very tough for me to learn but after some time I get used to it and for the api calls I have learned "RxKotlin" These all technologies were new to me and it took me around 3 days to learn Now I have only one day left to complete my project so I have made the project architecture using mvvm
+
+some important files 
+
+1 Networkmodule.kt :- 
+
+this networkModule provides the foundational networking layer for the app, enabling API communication with proper authentication, logging, and timeout handling, while adhering to the project's architectural and integration requirements.
+
+2 . WatchmodeApi :-
+
+The WatchmodeApi interface defines API endpoints using Retrofit for the Movie & TV Show Discovery App. It includes:
+
+getMovies and getTvShows: Fetch popular movies and TV shows as Single<WatchContentListResponse> with RxJava3, using optional language and page parameters (defaulting to "en-US" and 1).
+getMovieDetails and getTvShowDetails: Retrieve details for a specific movie or TV show as WatchContentResponse using coroutines, with movie_id or tv_id and an optional language parameter. The API interacts with The Movie Database (TMDb) endpoints (e.g., /movie/popular, /tv/popular) to provide content data.
+
+3 . WatchMapper
+
+The WatchMapper class is responsible for transforming API response data into the app's domain model (WatchContent). It includes two methods:
+
+mapResponseToWatchContent: Converts a single WatchContentResponse into a WatchContent object, determining if it's a TV show (based on first_air_date) or movie, setting the title (from title or name), constructing the posterUrl with a TMDb base URL, and assigning description, releaseDate, and type.
+mapResponseListToWatchContent: Maps a list of WatchContentResponse objects into a list of WatchContent objects by applying mapResponseToWatchContent to each item. This ensures consistent data formatting for UI display.
+
+4.DetailScreen
+
+The `DetailScreen` module in the `presentation.details` package implements the details screen for the Movie & TV Show Discovery App using Jetpack Compose. Here's a summary:
+
+- **DetailScreen**: A composable that displays content details based on `contentId` and `contentType` (movie or TV show). It uses a `DetailsViewModel` (injected via Koin) to manage state (`DetailsState`). It features:
+  - A `Scaffold` with a custom `DeatilsTopBar` showing the title and a back button.
+  - A `SnackbarHost` for error messages.
+  - An `AnimatedContent` to transition between `Loading`, `Success`, and `Error` states, with a shimmer effect (`LoadingIndicator`) during loading, `DetailContent` for success, and an `ErrorScreen` with a retry button for errors.
+  - `LaunchedEffect` to load content on startup and show snackbars for errors.
+
+- **DeatilsTopBar**: A `LargeTopAppBar` with a dynamic title from the `Success` state and a back navigation icon.
+
+- **LoadingIndicator**: A `CircularProgressIndicator` with an animated alpha effect for a shimmer-like loading state.
+
+- **ErrorScreen**: Displays an error message and a retry button, centered in a `Column`.
+
+This module meets the requirement for a details screen with a shimmer effect and error handling, integrated with MVVM and navigation.
+
+
+
+
+
+
+Note: Atlas the project was not completed but it was a great experience because I have learnt lot of new stuff.
+
+Thanks for giving me this opportunity and I apologise for the incomplete task
