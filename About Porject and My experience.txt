@@ -43,6 +43,8 @@ This module meets the requirement for a details screen with a shimmer effect and
 
 
 
-Note: Atlas the project was not completed but it was a great experience because I have learnt lot of new stuff.
 
-Thanks for giving me this opportunity and I apologise for the incomplete task
+
+
+
+Thanks for giving me this opportunity
