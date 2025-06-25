@@ -98,4 +98,22 @@ dependencies {
     //Placeholder
     implementation("com.google.accompanist:accompanist-placeholder-material:0.32.0")
 
+
+    //testing
+
+    // Unit testing
+    testImplementation ("junit:junit:4.13.2")
+    testImplementation ("org.mockito:mockito-core:5.2.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.1.0")
+
+// For RxJava testing
+    testImplementation ("io.reactivex.rxjava3:rxjava:3.1.9")
+    testImplementation ("io.reactivex.rxjava3:rxkotlin:3.0.1")
+
+// Optional: For ViewModel/Flow testing
+    testImplementation ("app.cash.turbine:turbine:1.0.0")
+    testImplementation ("app.cash.turbine:turbine:1.0.0")
+
+
 }

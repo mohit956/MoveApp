@@ -2,10 +2,9 @@ package com.example.move_application.data.mapper
 
 import com.example.move_application.data.model.WatchContent
 import com.example.move_application.data.model.response.WatchContentResponse
-
-class WatchMapper() {
-    fun mapResponseToWatchContent(input: WatchContentResponse): WatchContent {
-        val isTvShow: Boolean = input.first_air_date != null
+open class WatchMapper {
+    open fun mapResponseToWatchContent(input: WatchContentResponse): WatchContent {
+        val isTvShow = input.first_air_date != null
         return WatchContent(
             id = input.id,
             title = input.title ?: input.name ?: "",
@@ -16,7 +15,8 @@ class WatchMapper() {
             isMovie = !isTvShow
         )
     }
-    fun mapResponseListToWatchContent(input:List<WatchContentResponse>):List<WatchContent>{
-        return input.map{mapResponseToWatchContent(it) }
+
+    open fun mapResponseListToWatchContent(input: List<WatchContentResponse>): List<WatchContent> {
+        return input.map { mapResponseToWatchContent(it) }
     }
 }
