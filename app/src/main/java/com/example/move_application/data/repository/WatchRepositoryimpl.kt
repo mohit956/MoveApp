@@ -18,13 +18,12 @@ import io.reactivex.rxjava3.core.Single
                     .map { mapper.mapResponseListToWatchContent(it.results) }
             ) { movies, tvShows ->
                 Pair(movies,tvShows)
-//                Pair(movies, tvShows)
             }
         }
 
         override suspend fun getContentDetails(contentId: String, isMovie: Boolean): WatchContent {
             return if (isMovie) {
-                mapper.mapResponseToWatchContent(api.getTvShowDetails(contentId.toInt()))
+                mapper.mapResponseToWatchContent(api.getMovieDetails(contentId.toInt()))
             } else {
                 mapper.mapResponseToWatchContent(api.getTvShowDetails(contentId.toInt()))
             }

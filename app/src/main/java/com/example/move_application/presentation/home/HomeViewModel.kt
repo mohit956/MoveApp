@@ -18,7 +18,6 @@ class HomeViewModel(
     private val _state = MutableStateFlow<HomeState>(HomeState.Loading)
     val state: StateFlow<HomeState> = _state.asStateFlow()
 
-//    private val _contentType = MutableStateFlow(ContentType.MOVIES)
     private val _contentType = MutableStateFlow(ContentType.MOVIES)
     val contentType: StateFlow<ContentType> = _contentType.asStateFlow()
 
@@ -38,12 +37,15 @@ class HomeViewModel(
         getMoviesAndTvShowsUseCase()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ movies: List<WatchContent>, tvShows: List<WatchContent> ->
+            .subscribe({ pair ->
+                val movies = pair.first
+                val tvShows = pair.second
+
                 _state.value = HomeState.Success(
                     movies = movies,
                     tvShows = tvShows
                 )
-            } as (Pair<List<WatchContent>, List<WatchContent>>) -> Unit, { error ->
+            }, { error ->
                 _state.value = HomeState.Error(error.message ?: "Unknown error occurred")
             })
             .let { disposables.add(it) }
