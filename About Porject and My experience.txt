@@ -1,4 +1,51 @@
+** My Experience
+
 So first of all Kotlin was very new for me because I have done app development in Flutter so I have to learn Kotlin which was very fun So along with Kotlin I have learned the jetpack compose And came to know about this powerful tool 'Koin' Which was eventually very tough for me to learn but after some time I get used to it and for the api calls I have learned "RxKotlin" These all technologies were new to me and it took me around 3 days to learn Now I have only one day left to complete my project so I have made the project architecture using mvvm
+
+
+** Features Implemented:
+
+1 .Fetch and Display Movies & TV Shows:
+
+	Utilized API to fetch data.
+
+	Implemented a toggle button or tabs for switching between Movies and TV Shows.
+
+	Applied shimmer effect during data loading to enhance user experience.
+
+2. Details Screen:
+
+	Developed a details screen for each item.
+
+	Displayed key information such as title, description, release date, and poster image.
+
+	Integrated shimmer effect during data retrieval to indicate loading states.
+
+3. API Integration:
+
+	Concurrently fetched data from multiple endpoints using Single.zip in RxKotlin.
+
+	Incorporated Retrofit for seamless networking operations.
+
+4. Error Handling:
+
+	Implemented robust error handling mechanisms.
+
+	Displayed error messages gracefully using Snackbars or Toasts for better user interaction.
+
+5. Architecture:
+
+	Implemented MVVM (Model-View-ViewModel) architecture for clear separation of concerns.
+
+	Leveraged Dependency Injection (e.g., Koin) to manage and inject dependencies efficiently.
+
+** challenges faced and any assumptions made:-
+
+The technologies used in this project were new to me, which is why it took some extra time and effort to understand and implement them effectively. Throughout the development process, I focused on learning the best practices while also trying to deliver the required features. Although I have completed the core functionality,
+I believe the UI can still be improved further, and I plan to enhance it with a more polished and visually appealing design. This project has been a valuable learning experience for me.
+
+
+** About Project 
 
 some important files 
 
@@ -39,9 +86,5 @@ The `DetailScreen` module in the `presentation.details` package implements the d
 This module meets the requirement for a details screen with a shimmer effect and error handling, integrated with MVVM and navigation.
 
 
-challenges faced and any assumptions made:-
-
-The technologies used in this project were new to me, which is why it took some extra time and effort to understand and implement them effectively. Throughout the development process, I focused on learning the best practices while also trying to deliver the required features. Although I have completed the core functionality,
-I believe the UI can still be improved further, and I plan to enhance it with a more polished and visually appealing design. This project has been a valuable learning experience for me.
 
 Thanks for giving me this opportunity
