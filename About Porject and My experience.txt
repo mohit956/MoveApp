@@ -39,12 +39,9 @@ The `DetailScreen` module in the `presentation.details` package implements the d
 This module meets the requirement for a details screen with a shimmer effect and error handling, integrated with MVVM and navigation.
 
 
+challenges faced and any assumptions made:-
 
-
-
-
-
-
-
+The technologies used in this project were new to me, which is why it took some extra time and effort to understand and implement them effectively. Throughout the development process, I focused on learning the best practices while also trying to deliver the required features. Although I have completed the core functionality,
+I believe the UI can still be improved further, and I plan to enhance it with a more polished and visually appealing design. This project has been a valuable learning experience for me.
 
 Thanks for giving me this opportunity
